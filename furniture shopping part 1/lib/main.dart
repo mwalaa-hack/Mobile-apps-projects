@@ -6,12 +6,15 @@ import 'providers/cartadd.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => CartProvider(),  //create provider
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CartProvider()),
+      ],
       child: const MyApp(),
     ),
   );
 }
+
 
 
 class MyApp extends StatelessWidget {
